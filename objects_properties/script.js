@@ -2,6 +2,7 @@
  * OBJECTS and Properties\
  */
 
+//properties are just variables attached to objects
 // Object Literal
 var john = {
     firstName: 'John',

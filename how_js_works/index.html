@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>How Javascript Works</title>
+</head>
+
+<body>
+<h1>How Javascript works</h1>
+<h2>What happens in the javascript engine </h2>
+<p>
+    our code start in the browser > the host the uses a javascript engine to parse our code which reads our code and
+    checks if the syntax of our code is correct if there are mistakes it throws an error and stops execution. > If
+    everything is correct it creates a data structure called the abstract syntax tree. > that is then converted into
+    Machine Code > I then runs the code and does it's work
+</p>
+
+<h2>Execution Context/Stack</h2>
+<p>
+    <strong>Execution Context:</strong> A Box, a container, ore wrapper which stores variables and in which a piece of
+        our code is evaluated and executed <br/>
+    <strong>First:</strong>Runs code that is not inside any function, Anything that is in the global object gets
+    attached to the window object
+</p>
+<p>The Execution context object contains:</p>
+<ol>
+    <li>variable object</li>
+    <li>Scope Chain</li>
+    <li>"This" Variable</li>
+</ol>
+<ol>
+    <li>
+        <strong>creation phase:</strong>
+        <ol>
+            <li>Creation of the Variable Object</li>
+            <li>Creation of the scope Chain</li>
+            <li>Determine value of the 'this' variable</li>
+        </ol>
+    </li>
+    <li>
+        <strong>Execution phase:</strong>
+        <ol>
+            <li>The code of the function that generated the current execution context is ran line by line</li>
+        </ol>
+    </li>
+</ol>
+
+<p><strong>Variable Object Process</strong></p>
+<ul>
+    <li>The argument object is created, containing all the arguments that were passed into the function.</li>
+    <li>Code is scanned for function declarations: for each function, a property is created in the Variable Object,
+    pointing to the function.</li>
+    <li>Code is scanned for variable declarations: for each variable, a property is created in the Variable Object,
+    and set to undefined</li>
+</ul>
+<p>Functions and variables are hoisted in javascript which means they are available before the execution stack starts
+    functions are defined before the execution phase stars, while variables are set to undefined and will only be
+    defined in the execution phase.
+</p>
+<p><strong>Scoping chain</strong></p>
+<ul>
+    <li>Scoping answers the question "where can we access a certain variable?</li>
+    <li><strong>Each new function creates a scope:</strong> The space/environment, in which the variables it defines
+        are
+        accessible</li>
+    <li><strong>Lexical Scoping: a function that is lexically within another function gets access to the
+        scope of the outer function.</strong></li>
+</ul>
+<script src="script.js">
+
+</script>
+</body>
+</html>
