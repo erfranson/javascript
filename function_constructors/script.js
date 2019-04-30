@@ -22,7 +22,7 @@ var john = new Person('John', 1990, 'teacher');
 
 var ethan = new Person('Ethan', 1988, 'Developer');
 
-var tavia = new Person('Tavia', 1994, 'Speech Pathologist')
+var tavia = new Person('Tavia', 1994, 'Speech Pathologist');
 
 Person.prototype.lastName = 'Franson';
 
