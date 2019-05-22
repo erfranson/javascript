@@ -31,6 +31,8 @@ function maxHeartRate(el){
         return -1;
     }
 }
+
+// also call back functions
 var ages = arrayCalc(years, calcAge);
 var fullAge = arrayCalc(ages, isFullAge);
 var heartRate = arrayCalc(ages, maxHeartRate);
