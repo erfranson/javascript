@@ -3,6 +3,9 @@
 
 
 // function constructors start with a capital letter
+(function () {
+
+
 var Person = function (name, yearOfbirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfbirth;
