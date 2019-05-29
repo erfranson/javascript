@@ -38,53 +38,66 @@
  */
 
 // My answer
-(function () {
+// (function () {
+//
+//
+// var Question = function (question, choicesArr, answerIndex){
+//     this.question = question;
+//     this.choicesArr = choicesArr;
+//     this.answerIndex = answerIndex;
+//
+// };
+//
+// var mathQuestion = new Question('What is 1+1?',[0,2,5], 1);
+//
+// var historyQuestion = new Question('how many states are there in the united States?', [51,52,50], 2);
+//
+// var artQuestion = new Question('Which is not a primary color?', ['green','red','blue'], 0);
+//
+// var score = 0;
+//
+// // I should of just put this part in a prototype
+// var gameObject = {
+//     questions: [mathQuestion,historyQuestion,artQuestion],
+//
+//     randomQuestion: function () {
+//             var rand = this.questions[Math.floor(Math.random() * this.questions.length)];
+//             var choices = rand.choicesArr;
+//             var answer = rand.answerIndex;
+//            function display (){
+//                console.log(rand.question);
+//                for(var i = 0; i < choices.length; i++) {
+//                    console.log(i +': ' + choices[i]);
+//                }
+//            }
+//         display();
+//         prompts();
+//            function prompts() {
+//                var user = Number(prompt('Please select the correct answer (just type the number 0-2 or \'exit\' to' +
+//                    ' end' +
+//                    ' the game)!'));
+//                if(user === answer){
+//                    console.log('Correct Answer!');
+//                    score++;
+//                    console.log('your score is ' + score + '!');
+//                    gameObject.randomQuestion();
+//                }else if (isNaN(user)){
+//                    console.log('Thank you for playing! Your score was ' + score + '!');
+//                } else {
+//                    console.log('try again!');
+//                    display();
+//                    prompts();
+//                }
+//            }
+//
+//     }
+//
+// };
+//
+// gameObject.randomQuestion();
+// })();
 
-
-var Question = function (question, choicesArr, answerIndex){
-    this.question = question;
-    this.choicesArr = choicesArr;
-    this.answerIndex = answerIndex;
-
-};
-
-var mathQuestion = new Question('What is 1+1?',[0,2,5], 1);
-
-var historyQuestion = new Question('how many states are there in the united States?', [51,52,50], 2);
-
-var artQuestion = new Question('Which is not a primary color?', ['green','red','blue'], 0);
-
-console.log(mathQuestion,historyQuestion,artQuestion);
-
-
-// I should of just put this part in a prototype
-var gameObject = {
-    questions: [mathQuestion,historyQuestion,artQuestion],
-
-    randomQuestion: function () {
-            var rand = this.questions[Math.floor(Math.random() * this.questions.length)];
-            var choices = rand.choicesArr;
-            var answer = rand.answerIndex;
-            console.log(rand.question);
-            for(var i = 0; i < choices.length; i++) {
-                console.log(i +': ' + choices[i]);
-            }
-            var user = Number(prompt('Please select the correct answer (just type the number 0-2)!'));
-
-            if(user === answer){
-                console.log('Correct Answer!');
-            } else {
-                console.log('try again!');
-            }
-
-    }
-
-};
-
-gameObject.randomQuestion();
-})();
-
- // **His answer
+ // **His answer easy
 // (function () {
 //
 //
@@ -103,7 +116,8 @@ gameObject.randomQuestion();
 //
 // Question.prototype.checkAnswer = function (ans) {
 //     if(ans === this.answerIndex){
-//         console.log('Correct Answer!')
+//         console.log('Correct Answer!');
+//         this.displayQuestion();
 //     } else {
 //         console.log('Sorry Wrong Answer!');
 //     }
@@ -120,8 +134,84 @@ gameObject.randomQuestion();
 //
 // questions[n].displayQuestion();
 //
-// var answer = Number(prompt('Please Select the correct answer.'));
+// var answer = parseInt(prompt('Please Select the correct answer.'));
 //
 // questions[n].checkAnswer(answer);
 //
 // })();
+
+
+// his answer expert
+
+(function () {
+
+
+    var Question = function (question, choicesArr, answerIndex){
+        this.question = question;
+        this.choicesArr = choicesArr;
+        this.answerIndex = answerIndex;
+
+    };
+    Question.prototype.displayQuestion = function () {
+        console.log(this.question);
+        for (var i = 0; i < this.choicesArr.length; i++){
+            console.log(i + ': ' + this.choicesArr[i]);
+        }
+    };
+
+    Question.prototype.checkAnswer = function (ans, callback) {
+        var sc;
+        if(ans === this.answerIndex){
+            console.log('Correct Answer!');
+           sc = callback(true);
+        } else {
+            console.log('Sorry Wrong Answer!');
+            sc = callback(false);
+        }
+        this.displayScore(sc);
+    };
+    
+    Question.prototype.displayScore = function (score) {
+        console.log('Your current score is: ' + score);
+        console.log('---------------------');
+    };
+    
+    var mathQuestion = new Question('What is 1+1?',[0,2,5], 1);
+
+    var historyQuestion = new Question('how many states are there in the united States?', [51,52,50], 2);
+
+    var artQuestion = new Question('Which is not a primary color?', ['green','red','blue'], 0);
+
+    var questions = [mathQuestion,historyQuestion,artQuestion];
+
+    function score () {
+        var sc = 0;
+        return function (correct) {
+            if(correct){
+                sc++;
+            }
+            return sc;
+        }
+    };
+
+    var keepScore = score();
+    function nextQuestion() {
+
+        var n = Math.floor(Math.random() * questions.length);
+
+        questions[n].displayQuestion();
+
+        var answer = prompt('Please Select the correct answer.');
+
+
+
+        if(answer !== "exit") {
+            questions[n].checkAnswer(parseInt(answer), keepScore);
+            nextQuestion();
+        }
+
+
+    }
+nextQuestion();
+
+})();
