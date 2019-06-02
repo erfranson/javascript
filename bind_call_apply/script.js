@@ -59,6 +59,7 @@ function isFullAge(limit,el){
 
 var ages = arrayCalc(years, calcAge);
 
+// the this is refering to what method you are borrowing, so this method is not refering to another object
 var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
 
 console.log(ages);
