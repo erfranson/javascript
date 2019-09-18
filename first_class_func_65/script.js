@@ -11,7 +11,7 @@ var years = [1990, 1988, 1994, 1951, 2019];
 function arrayCalc (arr, fn){
     var arrRes = [];
     for(var i = 0; i < arr.length; i++){
-        arrRes.push(fn((arr[i])));
+        arrRes.push(fn(arr[i]));
     }
     return arrRes;
 }
@@ -26,7 +26,7 @@ function isFullAge(el){
 
 function maxHeartRate(el){
     if (el >= 18 && el <= 81) {
-        return Math.ceil(206.9 - (0.67 * el));
+        return Math.round(206.9 - (0.67 * el));
     } else {
         return -1;
     }

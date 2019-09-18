@@ -7,6 +7,7 @@ var personProto = {
     }
 }
 
+//this way you can set what protoype your new object is going to inheritance
 var john = Object.create(personProto);
 john.name = "John";
 john.yearOfBirth = 1990;

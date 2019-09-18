@@ -3,9 +3,6 @@
 
 
 // function constructors start with a capital letter
-(function () {
-
-
 var Person = function (name, yearOfbirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfbirth;
@@ -15,7 +12,7 @@ var Person = function (name, yearOfbirth, job) {
     // }
 };
 
-// new creates a empty object, then the function is called, and the the new operator makes it that the this variable is pointing to the empty object that is created instead of the empty object.
+// new creates a empty object, then the function is called, and the the new operator makes it that the this variable is pointing to the empty object that is created instead of the golbal object.
 
 Person.prototype.calculateAge = function () {
     console.log(2019 - this.yearOfBirth);

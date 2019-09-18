@@ -1,6 +1,6 @@
 //Primitives vs objects
 
-// primitives
+// primitives hold data inside the primitive itself 
 var a = 23;
 var b = a;
 a = 46;
