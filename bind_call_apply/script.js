@@ -8,9 +8,9 @@ var john = {
     job: 'teacher',
     presentation: function (style, timeOfDay) {
         if (style === 'formal'){
-            console.log('Good ' + timeOfDay + ', Ladies and Gentlemen! I\'m ' + this.name + ' I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+            console.log(`Good ${timeOfDay}, Ladies and Gentlemen! I'm ${this.name} I'm a ${this.job} and I'm ${this.age} years old.`);
         } else if (style === 'friendly') {
-            console.log('Hey! whats\'s up I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
+            console.log(`Hey! whats's up I'm ${this.name}, I'm a ${this.job} and I'm ${this.age} years old. Have a nice ${timeOfDay}.`);
         }
     }
 };
@@ -34,6 +34,7 @@ var johnFriendly = john.presentation.bind(john,'friendly');
 johnFriendly('night');
 johnFriendly('Day');
 
+// this is called carrying where you create a function based on another function
 var emilyFormal = john.presentation.bind(emily, 'formal');
 
 emilyFormal('morrow');

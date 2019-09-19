@@ -26,11 +26,11 @@ function interviewQuestion (job){
     var c = ', what do you do?';
     return function(name){
         if(job === 'designer'){
-            console.log(name + a);
+            console.log(`${name} ${a}`);
         }  else if( job === 'teacher'){
-            console.log(b + ' ' + name + '?');
+            console.log(`${b} ${name}?`);
         } else{
-            console.log(name + c);
+            console.log(`${name}${c}`);
 }
 }
 }
