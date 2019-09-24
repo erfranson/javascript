@@ -155,7 +155,7 @@
     Question.prototype.displayQuestion = function () {
         console.log(this.question);
         for (var i = 0; i < this.choicesArr.length; i++){
-            console.log(i + ': ' + this.choicesArr[i]);
+            console.log(`${i}: ${this.choicesArr[i]}`);
         }
     };
 
