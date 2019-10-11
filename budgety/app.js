@@ -1,41 +1,45 @@
 // data encapsulation is when we hide the Implementation details of a specific module from the outside scope so we
 // only expose a public interface. which is sometimes called a api.
+// seperation of concerns: each part of the application should only be interested in doing things seprately
+
+
 
 //module for the budget related items
-var budgetController = (function () {
-     var x = 23;
-
-     var add = function (a) {
-         return x + a;
-     };
-// returns a object with public test
-     return {
-         publicTest: function (b) {
-            return add(b);
-         }
-     };
+var budgetController =(function(){
 
 })();
+
 
 
 //module for the UI related items
-var UIController = (function () {
-    //Some code
-
-
+var UIController = (function (){
+    //somecode
 })();
 
-//Module for to connect everything together
 
+//Global App Controller
 // we change the name of the controller arguments here so we don't have to make updates in a multiple places.
-var appController = (function (budgetCtrl, UICtrl) {
-    //some code
-   var z = budgetCtrl.publicTest(5);
+var controller = (function(UICtrl,budgetCtrl) {
 
-   return {
-       anotherPublicMethod: function () {
-         console.log(z);
-       }
-   }
+    var ctrlAddItem = function(){
+         //1. get the filed input data
 
-})(budgetController, UIController); // we do it this way so that we don't have to change code often
+        //2. add the item to the buget controller
+
+        //3. add the item to the UI
+
+        //4. Calculate the budget
+
+        //5. display the budget
+        console.log("testing 123")
+    }
+
+    document.querySelector(".add__btn").addEventListener("click", ctrlAddItem);
+
+    document.addEventListener("keypress", function(event){
+        if(event.keyCode === 13 || event.which === 13){
+            ctrlAddItem()
+        }
+    });
+
+})(UIController, budgetController); // we do it this way so that we don't have to change code often
