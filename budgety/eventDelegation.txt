@@ -1,0 +1,9 @@
+Event bubbling: Events bubble up the parent elements
+Target elements: is the element that the even is fired on
+Event delegation: setting the even on a parent element to catch the event when it bubbles up
+
+Use cases for event deletgation:
+1. When we have an element with lots of child elements that we are interested in;
+2. When we want an event handler attached to an element that is not yet in the DOM when our page is loaded
+
+we want to use this on this project because we have alot of budget items that are not on the page yet, and it would be dumb to attach an event to one of the items when we want it to fire on all the elements that we will have on the income and expenses ui section.
