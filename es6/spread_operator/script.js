@@ -1,5 +1,5 @@
 //Spread Operator
-
+// difference between the rest operator vs the spread operator is that the spread operator is used in function calls, and the rest parameters are used in function declarations
 function addFourAges(a,b,c,d) {
     return a + b + c + d;
 }
