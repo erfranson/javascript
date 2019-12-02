@@ -24,7 +24,7 @@ boxesArr6.forEach((cur) => cur.style.backgroundColor = 'dodgerBlue')
 // }
 
 //es6
-for(const cur of boxesArr6){
+for(const cur of boxesArr6){// you can use the continue and break methods in this where in a forEach You can't
     if(cur.className.includes("blue")){
         continue;
     }
