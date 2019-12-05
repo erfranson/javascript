@@ -13,7 +13,7 @@ Person5.prototype.calculateAge = function() {
     console.log(age);
 }
 
-var john5 = new Person5('John', 1988, 'Uber Driver');
+var john5 = new Person5('John', 1985, 'Uber Driver');
 
 john5.calculateAge();
 
@@ -34,6 +34,6 @@ class Person6 {
     }
 }
 
-const john6 = new Person6('john', 1994, 'Teacher');
+const john6 = new Person6('john', 1995, 'Teacher');
 
 john6.calculateAge();

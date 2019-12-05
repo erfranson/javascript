@@ -8,11 +8,11 @@ function calAge(year){
     console.log(2019 - year);
     console.log(this);
 }
-calAge(1988);
+calAge(1989);
 
 var john = {
     name: 'John',
-    yearOfBirth: 1988,
+    yearOfBirth: 1990,
     calculateAge: function () {
         console.log(this);
         console.log(2019 - this.yearOfBirth);

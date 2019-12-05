@@ -6,7 +6,7 @@
 //since functions declarations are hoisted it doesn't matter if you call them before they are declared
 
 // works
-calcAge(1988);
+calcAge(1989);
 
 function calcAge(year) {
     console.log(2019 - year);
@@ -14,7 +14,7 @@ function calcAge(year) {
 
 // doesnt work
 
-// retirement(1988);
+// retirement(1989);
 
 var retirement = function (year) {
     console.log(65- (2019 - year))

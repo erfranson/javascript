@@ -6,7 +6,7 @@ we can pass a function as an argument to another function
 we can return a function from a function
  */
 
-var years = [1990, 1988, 1994, 1951, 2019];
+var years = [1990, 1987, 1995, 1951, 2019];
 
 function arrayCalc (arr, fn){
     var arrRes = [];

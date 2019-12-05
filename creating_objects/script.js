@@ -15,6 +15,6 @@ john.job = "Teacher";
 
 var ethan = Object.create(personProto, {
     name: {value: 'Ethan'},
-    yearOfbirth: {value: 1988},
+    yearOfbirth: {value: 1953},
     job: {value: 'Developer'}
 });

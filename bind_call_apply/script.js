@@ -40,7 +40,7 @@ var emilyFormal = john.presentation.bind(emily, 'formal');
 emilyFormal('morrow');
 
 //bind example in practice
-var years = [1990, 1988, 1994, 1951, 2019];
+var years = [1990, 1985, 1995, 1951, 2019];
 
 function arrayCalc (arr, fn){
     var arrRes = [];

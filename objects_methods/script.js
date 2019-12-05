@@ -5,7 +5,7 @@
 var john = {
     firstName: 'John',
     lastName: 'Smith',
-    birthYear: 1988,
+    birthYear: 1955,
     family: ['Jane', 'Mark', 'Bob', 'Emily'],
     job: 'teacher',
     isMarried: false,

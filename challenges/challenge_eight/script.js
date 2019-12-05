@@ -24,8 +24,8 @@ class Street extends Park {
 }
 
 const sallyPark = new Park('Sally Park', 1954, 1400, 65 , 34);
-const tobiasPark = new Park('Tobias Park',1988, 400, 31, 13 );
-const oceanPark = new Park('Ocean Park', 1994, 900, 25, 20);
+const tobiasPark = new Park('Tobias Park',1986, 400, 31, 13 );
+const oceanPark = new Park('Ocean Park', 1956, 900, 25, 20);
 const meanStreet = new Street('Mean Street',2000, 2.5);
 const shortLine = new Street('Short Line', 1951, 1.2, 'small');
 const prosperLane = new Street('Prosper Lane',2010, 5, 'huge');
